@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply for Your Free Strategy Call | Andry Strong</title>
+<meta name="description" content="Apply for a free strategy call with Andry Strong. Two short steps, no payment required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Anton&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">ANDRY<span>STRONG</span></a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#process">Process</a></li>
+        <li><a href="index.html#results">Results</a></li>
+        <li><a href="index.html#coach">Coach</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="apply.html" class="nav-cta">Apply</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="nav-mobile" aria-label="Mobile">
+    <a href="index.html#about">About</a>
+    <a href="index.html#process">Process</a>
+    <a href="index.html#results">Results</a>
+    <a href="index.html#coach">Coach</a>
+    <a href="index.html#faq">FAQ</a>
+  </nav>
+</header>
+
+<section class="apply-shell section-dark">
+  <div class="container">
+
+    <div class="apply-head">
+      <span class="badge-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg> We accept 10 new athletes per month</span>
+      <h1 class="h1" style="font-size:clamp(2rem,2.6vw+1.2rem,3.2rem);">Apply for Your <span class="text-red">Free Strategy Call</span></h1>
+      <p class="lede" style="margin-inline:auto; margin-top:16px;">Two quick steps. Andry personally reviews every application before your call, so a straight answer here helps him diagnose your weak points faster.</p>
+    </div>
+
+    <div class="apply-form-wrap">
+
+      <div id="applyFormWrap">
+        <div class="progress-row">
+          <span data-progress-step>Step 1 of 2</span>
+          <b data-progress-percent>50% Complete</b>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:50%;"></div></div>
+
+        <form id="applyForm" novalidate>
+
+          <!-- Honeypot: hidden from real users, bots tend to fill every field -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <!-- STEP 1: About you + goal -->
+          <div class="form-step is-active">
+            <div class="step-title">
+              <span class="num">1</span>
+              <h2>About You &amp; Your Goal</h2>
+            </div>
+
+            <div class="field">
+              <label for="fullName">Full name <span class="req">*</span></label>
+              <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+              <span class="field-error">Please enter your name.</span>
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+              <span class="field-error">Please enter a valid email.</span>
+            </div>
+
+            <div class="field">
+              <label for="whatsapp">WhatsApp or Telegram number <span class="req">*</span></label>
+              <input type="tel" id="whatsapp" name="whatsapp" placeholder="+1 234 567 8900" required>
+              <span class="field-error">Please enter a number Dragan can reach you on.</span>
+            </div>
+
+            <div class="field">
+              <label for="country">Country <span class="req">*</span></label>
+              <div class="select-wrap">
+                <select id="country" name="country" required>
+                  <option value="" selected disabled>Select country</option>
+                  <option>United States</option>
+                  <option>United Kingdom</option>
+                  <option>United Arab Emirates</option>
+                  <option>Ukraine</option>
+                  <option>Germany</option>
+                  <option>France</option>
+                  <option>Canada</option>
+                  <option>Australia</option>
+                  <option>Other</option>
+                </select>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <span class="field-error">Please select your country.</span>
+            </div>
+
+            <div class="field">
+              <label for="goal">What's the #1 skill you want to achieve? <span class="req">*</span></label>
+              <textarea id="goal" name="goal" placeholder="e.g. full planche, freestanding handstand, muscle-up, front lever..." required></textarea>
+              <span class="field-error">Tell Andry what you're chasing.</span>
+            </div>
+
+            <div class="form-nav">
+              <button type="button" class="btn btn-primary btn-block" data-next-step>
+                Next Step
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Training + consent -->
+          <div class="form-step">
+            <div class="step-title">
+              <span class="num">2</span>
+              <h2>Your Training</h2>
+            </div>
+
+            <div class="field">
+              <label>How many days per week do you train? <span class="req">*</span></label>
+              <div class="pill-select" role="radiogroup">
+                <label class="pill-option"><input type="radio" name="daysPerWeek" value="1-2" required><span>1-2</span></label>
+                <label class="pill-option"><input type="radio" name="daysPerWeek" value="3-4"><span>3-4</span></label>
+                <label class="pill-option"><input type="radio" name="daysPerWeek" value="5-6"><span>5-6</span></label>
+                <label class="pill-option"><input type="radio" name="daysPerWeek" value="7"><span>Every day</span></label>
+              </div>
+              <span class="field-error">Pick how often you currently train.</span>
+            </div>
+
+            <div class="field">
+              <label>Have you ever paid for coaching or a training program? <span class="req">*</span></label>
+              <div class="pill-select" role="radiogroup">
+                <label class="pill-option"><input type="radio" name="paidBefore" value="yes" required><span>Yes</span></label>
+                <label class="pill-option"><input type="radio" name="paidBefore" value="no"><span>No</span></label>
+              </div>
+              <span class="field-error">Let us know either way.</span>
+            </div>
+
+            <div class="field">
+              <label>If it's the right fit, how soon would you want to start? <span class="req">*</span></label>
+              <div class="select-wrap">
+                <select name="startTiming" required>
+                  <option value="" selected disabled>Select an option</option>
+                  <option>Immediately</option>
+                  <option>Within 7 days</option>
+                  <option>Within a month</option>
+                  <option>Just exploring for now</option>
+                </select>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <span class="field-error">Please select your timing.</span>
+            </div>
+
+            <div class="captcha-box">
+              <div class="captcha-row">
+                <button type="button" class="captcha-check" id="captchaCheck" aria-label="Verify you are human"></button>
+                <span class="captcha-label">I'm not a robot</span>
+                <span class="captcha-brand">Anti-spam<br>verification</span>
+              </div>
+              <div class="captcha-challenge" id="captchaChallenge">
+                <span id="captchaQuestion">? + ? = ?</span>
+                <input type="text" id="captchaAnswer" inputmode="numeric" placeholder="Answer">
+              </div>
+            </div>
+
+            <div class="consent-row">
+              <input type="checkbox" id="age18" name="age18" required>
+              <label for="age18">I confirm that I am 18 years of age or older. <span class="req">*</span></label>
+            </div>
+            <div class="consent-row">
+              <input type="checkbox" id="consentTerms" name="consentTerms" required>
+              <label for="consentTerms">I agree to the <a href="terms.html" target="_blank">Terms of Use</a>, <a href="privacy.html" target="_blank">Privacy Policy</a> and <a href="cookies.html" target="_blank">Cookie Policy</a>, including the processing of my personal data for this application. <span class="req">*</span></label>
+            </div>
+
+            <div class="form-nav">
+              <button type="button" class="btn btn-outline" data-prev-step>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Back
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Submit Application
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </div>
+
+        </form>
+
+        <div class="next-steps-mini">
+          <div><b>24 Hours</b><span>Andry reviews your application</span></div>
+          <div><b>1:1 Call</b><span>Free weak point diagnosis, 15 min</span></div>
+          <div><b>4-6 Weeks</b><span>Measurable progress on your #1 skill</span></div>
+        </div>
+      </div>
+
+      <div class="form-success" id="applySuccess">
+        <div class="icon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h2>Application received.</h2>
+        <p>Dragan from Andry's team will review it within 24 hours and reach out on WhatsApp or Telegram to schedule your free strategy call.</p>
+        <a href="index.html" class="btn btn-outline">Back to Home</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">ANDRY<span>STRONG</span></a>
+        <p>Personalized Calisthenics Mentorship.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/andry_strong/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.youtube.com/@andrystrong1" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+          <a href="mailto:support@andrystrong.com" class="social-btn" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Legal">
+        <a href="apply.html">Apply Now</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookies.html">Cookie Policy</a>
+        <a href="dpa.html">DPA</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Andry Strong. All rights reserved. Built for athletes who refuse to settle.</span>
+      <button class="cookie-settings-btn" data-cookie-settings>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Cookie Settings
+      </button>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="cookieModal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Cookie Preferences</h3>
+      <button class="modal-close" data-cookie-cancel aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <p class="sub">Manage your cookie preferences. Essential cookies are always enabled.</p>
+    <div class="pref-row">
+      <div class="pref-row-top">
+        <b>Essential Cookies</b>
+        <label class="switch"><input type="checkbox" checked disabled><span class="switch-track"></span></label>
+      </div>
+      <p>Required for the website to function properly.</p>
+      <span class="ex"><b>Examples:</b> Session management, authentication tokens, security preferences</span>
+    </div>
+    <div class="pref-row">
+      <div class="pref-row-top">
+        <b>Analytics &amp; Performance Cookies</b>
+        <label class="switch"><input type="checkbox" id="analyticsToggle" checked><span class="switch-track"></span></label>
+      </div>
+      <p>Help us understand how visitors interact with our website.</p>
+      <span class="ex"><b>Examples:</b> Page views, time on site, traffic sources</span>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-primary btn-sm" data-cookie-save><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Save Preferences</button>
+      <button class="btn btn-outline btn-sm" data-cookie-cancel>Cancel</button>
+      <a href="cookies.html" class="link-btn">Read Cookie Policy &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>We use cookies to run this site and, with your consent, to understand how it's used. Read our <a href="cookies.html">Cookie Policy</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn btn-primary btn-sm" data-cookie-accept>Accept All</button>
+    <button class="btn btn-outline btn-sm" data-cookie-reject>Reject Non-Essential</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/form.js"></script>
+</body>
+</html>

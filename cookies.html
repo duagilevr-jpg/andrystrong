@@ -1,0 +1,151 @@
+/* =========================================================================
+   ANDRY STRONG — form.js
+   Multi-step apply form: validation, progress, lightweight captcha,
+   honeypot, fake success state.
+
+   NOTE FOR ROMAN: there is no backend wired up here. On "submit" this
+   script only shows a success screen locally. Before going live, point
+   the fetch() call marked TODO below at a real endpoint (Formspree,
+   GoHighLevel inbound webhook, your own API, etc.) so applications are
+   actually delivered somewhere.
+
+   NOTE ON CAPTCHA: this is a lightweight self-contained anti-bot check
+   (checkbox + simple math challenge + hidden honeypot field), not Google
+   reCAPTCHA. reCAPTCHA verification must happen server-side with a secret
+   key, which needs a real backend. To upgrade later: register the domain
+   at google.com/recaptcha/admin, drop the site-key script + widget where
+   marked below, and verify the token server-side before accepting a
+   submission.
+   ========================================================================= */
+(function applyForm(){
+  const form = document.getElementById('applyForm');
+  if(!form) return;
+
+  const steps = Array.from(form.querySelectorAll('.form-step'));
+  const totalSteps = steps.length;
+  let currentStep = 0;
+
+  const progressFill = document.querySelector('.progress-fill');
+  const progressStepLabel = document.querySelector('[data-progress-step]');
+  const progressPercentLabel = document.querySelector('[data-progress-percent]');
+
+  function renderProgress(){
+    const pct = Math.round(((currentStep + 1) / totalSteps) * 100);
+    if(progressFill) progressFill.style.width = pct + '%';
+    if(progressStepLabel) progressStepLabel.textContent = `Step ${currentStep + 1} of ${totalSteps}`;
+    if(progressPercentLabel) progressPercentLabel.textContent = pct + '% Complete';
+  }
+
+  function showStep(index){
+    steps.forEach((s, i) => s.classList.toggle('is-active', i === index));
+    renderProgress();
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function validateStep(index){
+    const step = steps[index];
+    let valid = true;
+    const fields = step.querySelectorAll('input[required], select[required], textarea[required]');
+    fields.forEach(field => {
+      const wrap = field.closest('.field') || field.closest('.consent-row');
+      let ok = true;
+
+      if(field.type === 'radio'){
+        const name = field.name;
+        ok = !!step.querySelector(`input[name="${name}"]:checked`);
+      } else if(field.type === 'checkbox'){
+        ok = field.checked;
+      } else {
+        ok = field.value.trim() !== '';
+        if(ok && field.type === 'email'){
+          ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
+        }
+      }
+
+      if(wrap) wrap.classList.toggle('has-error', !ok);
+      if(!ok) valid = false;
+    });
+    return valid;
+  }
+
+  form.querySelectorAll('[data-next-step]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if(!validateStep(currentStep)) return;
+      if(currentStep < totalSteps - 1){
+        currentStep++;
+        showStep(currentStep);
+      }
+    });
+  });
+
+  form.querySelectorAll('[data-prev-step]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if(currentStep > 0){
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
+  });
+
+  /* ---- lightweight captcha ---- */
+  const captchaCheck = document.getElementById('captchaCheck');
+  const captchaChallenge = document.getElementById('captchaChallenge');
+  const captchaAnswer = document.getElementById('captchaAnswer');
+  const captchaQuestion = document.getElementById('captchaQuestion');
+  const captchaBox = document.querySelector('.captcha-box');
+  let captchaSolved = false;
+  let a = Math.ceil(Math.random() * 6) + 2;
+  let b = Math.ceil(Math.random() * 6) + 1;
+  if(captchaQuestion) captchaQuestion.textContent = `${a} + ${b} = ?`;
+
+  captchaCheck && captchaCheck.addEventListener('click', () => {
+    if(captchaSolved) return;
+    captchaChallenge.classList.add('show');
+    captchaAnswer.focus();
+  });
+  captchaAnswer && captchaAnswer.addEventListener('input', () => {
+    if(parseInt(captchaAnswer.value, 10) === a + b){
+      captchaSolved = true;
+      captchaCheck.classList.add('checked');
+      captchaCheck.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>';
+      captchaChallenge.classList.remove('show');
+    }
+  });
+
+  /* ---- submit ---- */
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if(!validateStep(currentStep)) return;
+
+    /* honeypot: if filled, it was a bot — silently pretend success, send nothing */
+    const honeypot = form.querySelector('.hp-field input');
+    const isBot = honeypot && honeypot.value.trim() !== '';
+
+    if(!captchaSolved && !isBot){
+      captchaBox && captchaBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      captchaChallenge && captchaChallenge.classList.add('show');
+      captchaAnswer && captchaAnswer.focus();
+      return;
+    }
+
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    if(!isBot){
+      /* TODO: replace with a real endpoint, e.g.:
+         fetch('https://YOUR-ENDPOINT.example.com/apply', {
+           method: 'POST',
+           headers: { 'Content-Type': 'application/json' },
+           body: JSON.stringify(data)
+         });
+      */
+      console.log('Application payload (wire this to a real endpoint):', data);
+    }
+
+    document.getElementById('applyFormWrap').style.display = 'none';
+    const success = document.getElementById('applySuccess');
+    if(success) success.classList.add('is-active');
+    success && success.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  renderProgress();
+})();
